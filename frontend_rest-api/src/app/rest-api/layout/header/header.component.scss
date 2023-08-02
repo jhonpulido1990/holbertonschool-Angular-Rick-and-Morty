@@ -1,0 +1,28 @@
+@import "primeicons/primeicons.css";
+
+header {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid blue;
+    gap: 20px;
+    a {
+      text-decoration: none;
+      font-size: 24px;
+      color: white;
+      &:hover{
+        color: rgb(8, 226, 55);
+      &:active{
+        color: gray;
+      }
+      }
+    }
+  }
+}
