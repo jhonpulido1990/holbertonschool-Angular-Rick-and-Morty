@@ -17,6 +17,6 @@ export class CharactersService {
     return this.http.get<Caracters[]>(this.baseUrl)
   }
   getCaracterHome(): Observable<CaractersAnime[]> {
-    return this.http.get<CaractersAnime[]>(`${this.baseUrl}/character/1,2,3,4,5,6`)
+    return this.http.get<CaractersAnime[]>(`${this.baseUrl}/character/1,2,3,4,5,6,7,8,9,10`)
   }
 }

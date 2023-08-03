@@ -1,5 +1,6 @@
 <section>
   <p-carousel
+    [value]="products"
     [numVisible]="4"
     [numScroll]="1"
     [circular]="true"
@@ -9,7 +10,7 @@
   >
     <ng-template let-product pTemplate="item">
       <div class="card__container">
-        <app-card></app-card>
+        <app-card [products]="products" ></app-card>
       </div>
     </ng-template>
   </p-carousel>

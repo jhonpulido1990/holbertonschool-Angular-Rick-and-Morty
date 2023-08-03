@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CaractersAnime } from 'src/app/core/interface/characters.interfaces';
 
 @Component({
   selector: 'app-card',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+  @Input() products!: any;
 
 }

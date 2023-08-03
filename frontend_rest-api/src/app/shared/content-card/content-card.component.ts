@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CaractersAnime } from 'src/app/core/interface/characters.interfaces';
 
 interface ResponsiveOptions {
   breakpoint: string;
@@ -14,7 +15,10 @@ interface ResponsiveOptions {
 export class ContentCardComponent implements OnInit {
   responsiveOptions!: ResponsiveOptions[];
 
+  @Input() products!: CaractersAnime[];
+
   ngOnInit() {
+    console.log(this.products)
     this.responsiveOptions = [
       {
         breakpoint: '1199px',
