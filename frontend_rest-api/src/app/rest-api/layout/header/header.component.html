@@ -1,13 +1,14 @@
 <header>
-  <div class="links">
-    <a href="#">characters</a>
-    <a href="#">locations</a>
-    <a href="#">episodes</a>
+  <div class="links" >
+    <div *ngFor="let dat of data">
+      <a href="#">{{ dat }}</a>
+    </div>
   </div>
+
   <div class="card flex flex-wrap justify-content-center gap-3">
     <span class="p-input-icon-left">
-        <i class="pi pi-search"></i>
-        <input type="text" pInputText  />
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText placeholder="search"/>
     </span>
   </div>
 </header>
