@@ -2,24 +2,17 @@
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-title>{{ products.name }}</mat-card-title>
-      <mat-card-subtitle>{{ products.id }}</mat-card-subtitle>
+      <mat-card-subtitle>{{ products.species }}</mat-card-subtitle>
       <img
         mat-card-md-image
-        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        [src]="products.image"
         alt="Image of a Shiba Inu"
       />
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
-    <!--  {{longText}} -->
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique
-    iste vel dolores aperiam accusantium, reiciendis officiis aspernatur atque
-    tenetur id quasi, laboriosam totam nisi autem obcaecati enim eius harum!
-    Accusamus dicta molestias laboriosam ullam doloremque cupiditate eligendi
-    sed suscipit nisi, saepe nulla in, impedit perferendis necessitatibus
-    voluptas ducimus asperiores maxime esse. Sint autem ipsum, laudantium nisi
-    iure corporis velit! Debitis similique, voluptates perferendis nam facere
-    iusto pariatur sint, quis libero non impedit hic dolorum sit unde? Corrupti,
-    iure sunt eaque omnis, hic quis id ipsa fuga magnam officiis dolorum.
+    Location: {{products.location.name}}
+    <br>
+    Gender: {{products.gender}}
   </mat-card-content>
 </mat-card>

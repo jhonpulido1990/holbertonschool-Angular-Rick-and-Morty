@@ -7,6 +7,6 @@ import { CaractersAnime } from 'src/app/core/interface/characters.interfaces';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() products!: any;
+  @Input() products!: CaractersAnime;
 
 }
