@@ -24,9 +24,12 @@ export class CharactersService {
       `${this.baseUrl}/character/1,2,3,4,5,6,7,8,9,10`
     );
   }
-  getCaracter(data: string ): Observable<AllCaracters[]> {
-    return this.http.get<AllCaracters[]>(
-      `${this.baseUrl}/character/${data}`
-    );
+  getCaracter(query = '', page = 1): Observable<CaractersAnime[]> {
+    const filter = `${this.baseUrl}/character/?name=${query}&page=${page}`
+    return this.http.get<CaractersAnime[]>(filter);
+  }
+
+  getDetails(id: number){
+    return this.http.get<CaractersAnime>(`${this.baseUrl}/character/${id}`)
   }
 }

@@ -28,7 +28,7 @@ export interface CaractersAnime {
   image: string,
   episode: string[],
   url: string,
-  created: Date,
+  created: string,
 }
 
 export interface Origin {

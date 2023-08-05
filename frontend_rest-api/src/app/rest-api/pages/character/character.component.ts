@@ -13,14 +13,7 @@ export class CharacterComponent implements OnInit {
   data!:AllCaracters[]
 
   ngOnInit(): void {
-    this.getAnimeAll()
   }
 
-  getAnimeAll() {
-    this.dataService.getCaracter('')
-    .subscribe(res => {
-      this.data = res
-    })
-  }
 
 }

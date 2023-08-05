@@ -1,18 +1,20 @@
 <mat-card class="container_card">
   <mat-card-header>
     <mat-card-title-group>
-      <mat-card-title>{{ products.name }}</mat-card-title>
+      <mat-card-title>{{ products.name }} {{ products.status }}</mat-card-title>
       <mat-card-subtitle>{{ products.species }}</mat-card-subtitle>
-      <img
-        mat-card-md-image
-        [src]="products.image"
-        alt="Image of a Shiba Inu"
-      />
+      <a [routerLink]="['/character-details', products.id]">
+        <img
+          mat-card-md-image
+          [src]="products.image"
+          alt="Image of a Shiba Inu"
+        />
+      </a>
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
-    Location: {{products.location.name}}
-    <br>
-    Gender: {{products.gender}}
+    Location: {{ products.location.name }}
+    <br />
+    Gender: {{ products.gender }}
   </mat-card-content>
 </mat-card>
