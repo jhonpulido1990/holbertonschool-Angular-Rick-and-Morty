@@ -33,8 +33,11 @@ export class CharacterListComponent implements OnInit {
   getDataByQuery() {
     this.route.queryParamMap
     .subscribe((params: ParamMap)=>{
-      console.log(params)
       this.query = params.get('q');
+      if (!this.query){
+        this.query = ''
+      }
+      console.log(this.query),
       this.getDataService();
     })
 
