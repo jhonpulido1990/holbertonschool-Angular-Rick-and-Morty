@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { take } from 'rxjs';
+import { filter, take } from 'rxjs';
 import { CaractersAnime } from 'src/app/core/interface/characters.interfaces';
 import { CharactersService } from 'src/app/core/service/characters/characters.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, ParamMap, Router } from '@angular/router';
 
 type RequestInfo = {
   next: string | null;
@@ -17,6 +17,7 @@ export class CharacterListComponent implements OnInit {
   characters: CaractersAnime[] = [];
   dataService = inject(CharactersService);
   route = inject(ActivatedRoute);
+  router = inject(Router)
   info: RequestInfo = {
     next: null,
   };
@@ -26,21 +27,48 @@ export class CharacterListComponent implements OnInit {
   private hideScrollHeight = 200;
   private showScrollHeight = 500;
 
+  constructor(){
+    this.onUrlChange()
+  }
+
   ngOnInit(): void {
     this.getDataByQuery();
   }
 
+  paginationMore(){
+    if (this.pageNum < 43){
+      this.pageNum++;
+      this.getDataByQuery()
+    }
+
+  }
+
+  paginationMinus(){
+    if (this.pageNum > 0) {
+      this.pageNum--;
+      this.getDataByQuery()
+    }
+
+  }
+
+  onUrlChange() {
+    this.router.events
+    .pipe(filter((event) => event instanceof NavigationEnd))
+    .subscribe(() =>{
+      this.characters = [];
+      this.pageNum = 1;
+      this.getDataByQuery()
+    })
+  }
+
   getDataByQuery() {
-    this.route.queryParamMap
-    .subscribe((params: ParamMap)=>{
+    this.route.queryParamMap.subscribe((params: ParamMap) => {
       this.query = params.get('q');
       if (!this.query){
         this.query = ''
       }
-      console.log(this.query),
       this.getDataService();
-    })
-
+    });
   }
 
   getDataService() {
@@ -53,9 +81,8 @@ export class CharacterListComponent implements OnInit {
           this.characters = [...this.characters, ...results];
           this.info = info;
         } else {
-          this.characters = []
+          this.characters = [];
         }
-
       });
   }
 }
