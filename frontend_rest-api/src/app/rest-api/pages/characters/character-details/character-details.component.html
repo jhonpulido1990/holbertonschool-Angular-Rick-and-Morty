@@ -1,13 +1,23 @@
-<div class="card" *ngIf="character$ | async as character" >
-  <div class="image">
-    <img [src]="character.image" alt="character.name" class="card-img-top" />
-  </div>
-  <div class="card-inner">
-    <div class="header">
-      <h2>{{ character.name | slice : 0 : 15 }}</h2>
-      <h4 class="text-muted">{{ character.gender }}</h4>
-      <small class="text-muted">{{ character.created | date }}</small>
+<div class="card m-5 flex justify-content-center" *ngIf="character$ | async as character">
+  <div class="flex flex-wrap justify-content-center align-items-center gap-3 bg-blue-100">
+    <div class="image">
+      <img [src]="character.image" alt="character.name" class="card-img-top" />
+    </div>
+    <div class="card-inner">
+      <div class="header">
+        <h3>  {{ character.species }} </h3>
+        <h2>{{ character.name }}</h2>
+        <h3 >{{ character.gender }} : {{character.status}}</h3>
+        <div class="flex flex-column">
+          <p>{{character.origin.name}}</p>
+          <p>{{character.location.name}}</p>
+          <p>{{character.type}}</p>
+          <p>{{character.created | date:'medium' }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<button (click)="onGoback()" class="btn btn-dark">back</button>
+<div class="flex justify-content-center">
+  <button (click)="onGoback()" class="btn btn-dark">back</button>
+</div>
