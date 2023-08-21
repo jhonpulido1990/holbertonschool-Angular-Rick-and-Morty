@@ -1,7 +1,6 @@
 @import "primeicons/primeicons.css";
 
 header {
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,7 +10,6 @@ header {
   .links {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid blue;
     gap: 20px;
     a {
       text-decoration: none;

@@ -1,3 +1,18 @@
-.content {
-  border: 1px solid red;
+.no_content{
+  display: flex;
+  width: 100vh;
+  height: 100vh;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../../../assets/images/p10376284_i_h10_ad.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.content-card{
+  height: 400px;
+  width: 90%;
+  overflow: auto;
 }
