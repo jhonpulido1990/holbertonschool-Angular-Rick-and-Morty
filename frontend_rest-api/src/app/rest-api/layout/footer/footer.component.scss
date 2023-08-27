@@ -1,4 +1,8 @@
 footer {
-  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 25px;
   color: white;
 }
