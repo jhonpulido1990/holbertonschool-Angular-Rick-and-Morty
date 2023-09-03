@@ -19,9 +19,9 @@ export class CharactersService {
   getNavbar(): Observable<Caracters[]> {
     return this.http.get<Caracters[]>(this.baseUrl);
   }
-  getCaracterHome(): Observable<CaractersAnime[]> {
+  getCaracterHome(array: number | number[] = [1,2,3,4,5,6,7,8,9,10]): Observable<CaractersAnime[]> {
     return this.http.get<CaractersAnime[]>(
-      `${this.baseUrl}/character/1,2,3,4,5,6,7,8,9,10`
+      `${this.baseUrl}/character/${array}`
     );
   }
   getCaracter(query = '', page = 1): Observable<CaractersAnime[]> {
