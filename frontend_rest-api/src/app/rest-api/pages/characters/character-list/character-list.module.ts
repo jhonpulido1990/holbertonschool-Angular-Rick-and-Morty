@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 
 import { CharacterListRoutingModule } from './character-list-routing.module';
 
@@ -8,7 +9,8 @@ import { CharacterListRoutingModule } from './character-list-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    CharacterListRoutingModule
+    CharacterListRoutingModule,
+    PrimeNgModule
   ]
 })
 export class CharacterListModule { }
